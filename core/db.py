@@ -9,3 +9,16 @@ DB_SQLITE3 = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DB_POSTGRESQL = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get('DB_NAME'),
+        "USER": os.environ.get('USER'),
+        "PASSWORD": os.environ.get('PASSWORD'),
+        "HOST": os.environ.get('HOST'),
+        "PORT": os.environ.get('PORT'),
+    }
+}
+
+DB_POSTGRESQL["default"]["ATOMIC_REQUESTS"] = True
